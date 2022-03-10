@@ -141,13 +141,14 @@ pipeline {
 
                     while(true) {
                         try{
+                            sleep(20)
                             sh "curl -s ${GRAND_MASTER_PUBLIC_IP}:8080"
                             echo "${APP_NAME} app is successfully deployed."
                             break
                         }
                         catch(Exception){
                             echo "Could not connect to ${APP_NAME} app"
-                            sleep(5)
+                            sleep(20)
                         }
                     }
                 }
